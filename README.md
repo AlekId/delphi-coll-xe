@@ -2,9 +2,9 @@
 
 Generic collections for Delphi 2010 and later.
 
-## Overview of the library
-
 > This is a fork that attempts to keep alive the  **discontinued** *Delphi Collections Library* by Ciobanu Alexandru. See below for further information about the fork.
+
+## Overview of the library
 
 ### Description
 
