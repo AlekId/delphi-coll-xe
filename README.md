@@ -32,11 +32,11 @@ At least Delphi 2010 is required to for the library to function. Delphi 2009 cou
 
 ## Information about this fork
 
-This is a fork of the **discontinued** *Delphi Collections Library* by Ciobanu Alexandru as uploaded to GitHub by [ghquant](https://github.com/ghquant). It is believed that the Library was itself branched of the equally defunct *DeHL* library by the same author.
+This is a fork of the **discontinued** [*Delphi Collections Library*](https://github.com/pavkam/delphi-coll) by [Ciobanu Alexandru](https://github.com/pavkam). It is believed that the library was itself derived from the equally defunct *DeHL* library by the same author.
 
-It would seem that the project was discontinued in January 2012.
+The project was discontinued on 09 January 2012.
 
-The code appears to be based on the *Delphi Collections Library* v1.2 release. It is not known whether any commits were made to the code we have here after the release of v1.2. (No history was included in the initial GitHub upload).
+The code appears to be based on the *Delphi Collections Library* v1.2 release. It is not known whether any commits were made to the code we have here after the release of v1.2. (No history was included in the original GitHub project).
 
 This fork has been created because my *CodeSnip* project uses the library. The fork enables me to ensure the code remains available and lets me update and debug it as necessary.
 
