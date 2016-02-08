@@ -157,8 +157,24 @@ begin
     function(Arg1: TPerson; Arg2: ISequence<TPet>): TOwnedPets
     begin
       Result.FOwnerName := Format('%s, %s', [Arg1.FLast, Arg1.FFirst]);
+      //! COMPILER BUG. On Delphi XE the overloaded call to
+      // Arg2.Op.Select<String> causes a "E2035 Not enough actual parameters"
+      // error, even though the required method overload is present in
+      // Collections.Base.TEnexExtOps<T>.
+      // BUT It was noted that the IDE was flagging the overload as "Identifier
+      // redeclared" even though the code compiled without errors.
+      // The solution for now is to use one of the other overloads to the Select
+      // method that requires a second TRules<T> argument. The value chosen
+      // replicates exactly the functionality of the original single parameter
+      // method
+      (*
       Result.FPetNames := Arg2.Op.Select<String>(
         function(Arg1: TPet): String begin Result := Arg1.FName; end);
+      *)
+      Result.FPetNames := Arg2.Op.Select<String>(
+        function(Arg1: TPet): String begin Result := Arg1.FName; end,
+        TRules<string>.Default
+      );
     end { The result selector }
   );
 
