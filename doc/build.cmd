@@ -1,1 +1,0 @@
-"G:\Work Software\Doc-O-Matic 7 Express\domexpress.exe" -all E:\Works\Collections\doc\Documentation.dox-express
