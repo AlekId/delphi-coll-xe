@@ -164,11 +164,6 @@
 					</Source>
 					<Parameters/>
 				</Delphi.Personality>
-				<Platforms>
-					<Platform value="Win64">True</Platform>
-					<Platform value="OSX32">False</Platform>
-					<Platform value="Win32">True</Platform>
-				</Platforms>
 			</BorlandProject>
 			<ProjectFileVersion>12</ProjectFileVersion>
 		</ProjectExtensions>
