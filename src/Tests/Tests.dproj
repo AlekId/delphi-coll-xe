@@ -20,6 +20,12 @@
 			<CfgParent>Base</CfgParent>
 			<Base>true</Base>
 		</PropertyGroup>
+		<PropertyGroup Condition="'$(Platform)'=='Win32' and '$(Cfg_1)'=='true' or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
 		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
 			<Cfg_2>true</Cfg_2>
 			<CfgParent>Base</CfgParent>
@@ -52,6 +58,9 @@
 			<DCC_Optimize>false</DCC_Optimize>
 			<DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
 		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<DCC_UnitSearchPath>..\..\bin;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+		</PropertyGroup>
 		<PropertyGroup Condition="'$(Cfg_2)'!=''">
 			<DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
 			<DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
@@ -74,8 +83,12 @@
 			<DCCReference Include="Tests.Conformance.Bags.pas"/>
 			<DCCReference Include="Tests.Internal.Basics.pas"/>
 			<DCCReference Include="Tests.Internal.Serialization.pas"/>
-			<DCCReference Include="Tests.Internal.Dynamic.pas"/>
-			<DCCReference Include="Tests.Conformance.Specific.pas"/>
+			<DCCReference Include="Tests.Internal.Dynamic.pas">
+				<Form>$R *.RES</Form>
+			</DCCReference>
+			<DCCReference Include="Tests.Conformance.Specific.pas">
+				<Form>$R *.RES</Form>
+			</DCCReference>
 			<BuildConfiguration Include="Release">
 				<Key>Cfg_2</Key>
 				<CfgParent>Base</CfgParent>
