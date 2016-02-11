@@ -28,7 +28,7 @@ At least Delphi 2010 is required to for the library to function. Delphi 2009 cou
 * [Implementation details](doc/CollectionDetails.md)
 * [Enex operations](doc/EnexOperations.md)
 * [Difference from standard collections](doc/DifferencesFromGenericsCollections.md)
-* [Change log](changelog.txt)
+* [Change log](CHANGELOG.md)
 
 ## Information about this fork
 
@@ -36,15 +36,11 @@ This is a fork of the **discontinued** [*Delphi Collections Library*](https://gi
 
 The project was discontinued on 09 January 2012.
 
-The code appears to be based on the *Delphi Collections Library* v1.2 release. It is not known whether any commits were made to the code we have here after the release of v1.2. (No history was included in the original GitHub project).
-
-This fork has been created because my *CodeSnip* project uses the library. The fork enables me to ensure the code remains available and lets me update and debug it as necessary.
-
-It is not my intention to make any significant changes to the library, but it may get tweaked to meet my needs.
+The code from which this fork is derived is based on the *Delphi Collections Library* v1.2 release, but with some later changes.
 
 ## License
 
-Licensed under the BSD License -- see [LICENSE.txt](LICENSE.txt). The original library is copyright (c) 2008-2012, Ciobanu Alexandru.
+Licensed under the BSD License -- see [LICENSE](LICENSE). The original library is copyright (c) 2008-2012, Ciobanu Alexandru. Any later new files are copyright (c) 2016, Peter Johnson (@delphidabbler).
 
 ## Bugs
 
