@@ -1,5 +1,29 @@
 # Change Log
 
+## Unreleased
+
+* All apparent changes before project was forked. (There may be more!):
+    * Various renamings:
+        * `TEnexAssociativeCollection<TKey,TValue>` as `TAssociation<TKey,TValue>`;
+        * `IEnexAssociativeCollection<TKey,TValue>` as `IAssociation<TKey,TValue>`;
+        * `TEnexCollection<T>` as `TSequence<T>`;
+        * `IEnexCollection<T>` as `ISequence<T>`;
+        * `TCollection<T>` as `TContainer<T>`;
+        * `ICollection<T>` as  `IContainer<T>`; 
+        * `TAbstractCollection` as `TAbstractContainer`;
+        * `TAbstractCollection<T>` as  `TAbstractContainer<T>`; 
+        * `TOperableCollection<T>` as `TCollection<T>`;
+        * `IOperableCollection<T>` as `ICollection<T>`;
+        * `[NonSerializable]` attribute as `[NonSerialized]`.
+    * Removed `GroupedBy<T>()` extended operation added in v1.1.    
+ 
+
+--------
+
+**Below are the releases made on the original *pavkam/delphi-coll* project. These releases are undated did not follow the Semantic Versioning model.**
+
+--------
+
 ##  Major Release: 1.2
 
 * New unit `Collections.Serialization`. Includes:
