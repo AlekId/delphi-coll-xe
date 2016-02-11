@@ -1,5 +1,7 @@
 # Change Log
 
+All notable changes to this project will be documented in this file. As of the first alpha release of v2.0 this project adheres to [Semantic Versioning](http://semver.org/).
+
 ## Unreleased
 
 ### Changes before project fork
