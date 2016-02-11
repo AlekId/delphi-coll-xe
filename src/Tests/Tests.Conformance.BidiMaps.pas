@@ -25,6 +25,13 @@
 * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 *)
 
+{
+  This file has been modified from the original by Peter Johnson 
+  (@delphidabbler). For full details of modifications see the commit history of
+  the delphidabbler/delphi-coll fork on GitHub
+}
+
+
 unit Tests.Conformance.BidiMaps;
 interface
 uses SysUtils,
