@@ -84,7 +84,7 @@ type
 
   TConformance_TBitSet = class(TConformance_ISet)
   private type
-    TBitSetAdapter = class(TAbstractOperableCollection<NativeInt>, ISet<NativeInt>)
+    TBitSetAdapter = class(TCollection<NativeInt>, ISet<NativeInt>)
     private type
       TEnumerator = class(TAbstractEnumerator<NativeInt>)
       private

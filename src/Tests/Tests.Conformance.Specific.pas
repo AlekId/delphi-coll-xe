@@ -28,6 +28,7 @@
 unit Tests.Conformance.Specific;
 interface
 uses SysUtils,
+     Tests.Internal.Basics,
      Tests.Conformance.Base,
      TestFramework,
      Generics.Collections,
@@ -35,160 +36,265 @@ uses SysUtils,
      Collections.Sets;
 
 type
-  TConformance_TAbstractOperableCollection = class(TConformance_IOperableCollection)
+  // NOTE: Temporary class that all un-implemented classes descend from: used simply to get a fail test
+  //       When a test is implemented change its parent class back to the commented out version and
+  //       provide concrete implementations of inherited abstract methods.
+  TSpecificTempTest = class(TTestCaseEx)
   published
+    procedure Test_STUB;
   end;
 
-  TConformance_TAbstractMap = class(TConformance_IMap)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_TCollection = class(TConformance_ICollection)
+  TConformance_TCollection = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Op_GroupBy = class(TConformance_IGrouping)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_TAbstractMap = class(TConformance_IMap)
+  TConformance_TAbstractMap = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_ToList = class(TConformance_IList)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Op_GroupBy = class(TConformance_IGrouping)
+  TConformance_ISequence_Op_GroupBy = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_ToSet = class(TConformance_ISet)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_ToList = class(TConformance_IList)
+  TConformance_ISequence_ToList = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Where = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_ToSet = class(TConformance_ISet)
+  TConformance_ISequence_ToSet = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Distinct = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Where = class(TConformance_ISequence)
+  TConformance_ISequence_Where = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Ordered_1 = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Distinct = class(TConformance_ISequence)
+  TConformance_ISequence_Distinct = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Ordered_2 = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Ordered_1 = class(TConformance_ISequence)
+  TConformance_ISequence_Ordered_1 = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Reversed = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Ordered_2 = class(TConformance_ISequence)
+  TConformance_ISequence_Ordered_2 = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Concat = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Reversed = class(TConformance_ISequence)
+  TConformance_ISequence_Reversed = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Union = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Concat = class(TConformance_ISequence)
+  TConformance_ISequence_Concat = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Exclude = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Union = class(TConformance_ISequence)
+  TConformance_ISequence_Union = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Intersect = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Exclude = class(TConformance_ISequence)
+  TConformance_ISequence_Exclude = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Range = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Intersect = class(TConformance_ISequence)
+  TConformance_ISequence_Intersect = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Take = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Range = class(TConformance_ISequence)
+  TConformance_ISequence_Range = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_TakeWhile = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Take = class(TConformance_ISequence)
+  TConformance_ISequence_Take = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Skip = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_TakeWhile = class(TConformance_ISequence)
+  TConformance_ISequence_TakeWhile = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_SkipWhile = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Skip = class(TConformance_ISequence)
+  TConformance_ISequence_Skip = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Op_Select_1 = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_SkipWhile = class(TConformance_ISequence)
+  TConformance_ISequence_SkipWhile = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Op_Select_2 = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Op_Select_1 = class(TConformance_ISequence)
+  TConformance_ISequence_Op_Select_1 = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Op_Select_3 = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Op_Select_2 = class(TConformance_ISequence)
+  TConformance_ISequence_Op_Select_2 = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Op_Select_4 = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Op_Select_3 = class(TConformance_ISequence)
+  TConformance_ISequence_Op_Select_3 = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexCollection_Op_Select_5 = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Op_Select_4 = class(TConformance_ISequence)
+  TConformance_ISequence_Op_Select_4 = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexAssociativeCollection_ToDictionary = class(TConformance_IDictionary)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_ISequence_Op_Select_5 = class(TConformance_ISequence)
+  TConformance_ISequence_Op_Select_5 = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexAssociativeCollection_SelectKeys = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_IAssociation_ToDictionary = class(TConformance_IDictionary)
+  TConformance_IAssociation_ToDictionary = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexAssociativeCollection_SelectValues = class(TConformance_IEnexCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_IAssociation_SelectKeys = class(TConformance_ISequence)
+  TConformance_IAssociation_SelectKeys = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexAssociativeCollection_DistinctByKeys = class(TConformance_IEnexAssociativeCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_IAssociation_SelectValues = class(TConformance_ISequence)
+  TConformance_IAssociation_SelectValues = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexAssociativeCollection_DistinctByValues = class(TConformance_IEnexAssociativeCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_IAssociation_DistinctByKeys = class(TConformance_IAssociation)
+  TConformance_IAssociation_DistinctByKeys = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
   end;
 
-  TConformance_IEnexAssociativeCollection_Where = class(TConformance_IEnexAssociativeCollection)
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_IAssociation_DistinctByValues = class(TConformance_IAssociation)
+  TConformance_IAssociation_DistinctByValues = class(TSpecificTempTest)
   published
+    // TODO: Implement tests
+  end;
+
+// TODO: restore following parent class when implementing test(s)
+//  TConformance_IAssociation_Where = class(TConformance_IAssociation)
+  TConformance_IAssociation_Where = class(TSpecificTempTest)
+  published
+    // TODO: Implement tests
   end;
 
 implementation
 
+{ TSpecificTempTest }
+
+procedure TSpecificTempTest.Test_STUB;
+begin
+  Fail('No tests implemented for ' + ClassName + '!');
+end;
+
 initialization
   RegisterTests('Conformance.Simple.Specific', [
-    TConformance_IEnexCollection_ToList.Suite,
-    TConformance_IEnexCollection_ToSet.Suite,
-    TConformance_IEnexCollection_Where.Suite,
-    TConformance_IEnexCollection_Distinct.Suite,
-    TConformance_IEnexCollection_Ordered_1.Suite,
-    TConformance_IEnexCollection_Ordered_2.Suite,
-    TConformance_IEnexCollection_Reversed.Suite,
-    TConformance_IEnexCollection_Concat.Suite,
-    TConformance_IEnexCollection_Union.Suite,
-    TConformance_IEnexCollection_Exclude.Suite,
-    TConformance_IEnexCollection_Intersect.Suite,
-    TConformance_IEnexCollection_Range.Suite,
-    TConformance_IEnexCollection_Take.Suite,
-    TConformance_IEnexCollection_TakeWhile.Suite,
-    TConformance_IEnexCollection_Skip.Suite,
-    TConformance_IEnexCollection_SkipWhile.Suite,
-    TConformance_IEnexCollection_Op_Select_1.Suite,
-    TConformance_IEnexCollection_Op_Select_2.Suite,
-    TConformance_IEnexCollection_Op_Select_3.Suite,
-    TConformance_IEnexCollection_Op_Select_4.Suite,
-    TConformance_IEnexCollection_Op_Select_5.Suite
+    TConformance_ISequence_ToList.Suite,
+    TConformance_ISequence_ToSet.Suite,
+    TConformance_ISequence_Where.Suite,
+    TConformance_ISequence_Distinct.Suite,
+    TConformance_ISequence_Ordered_1.Suite,
+    TConformance_ISequence_Ordered_2.Suite,
+    TConformance_ISequence_Reversed.Suite,
+    TConformance_ISequence_Concat.Suite,
+    TConformance_ISequence_Union.Suite,
+    TConformance_ISequence_Exclude.Suite,
+    TConformance_ISequence_Intersect.Suite,
+    TConformance_ISequence_Range.Suite,
+    TConformance_ISequence_Take.Suite,
+    TConformance_ISequence_TakeWhile.Suite,
+    TConformance_ISequence_Skip.Suite,
+    TConformance_ISequence_SkipWhile.Suite,
+    TConformance_ISequence_Op_Select_1.Suite,
+    TConformance_ISequence_Op_Select_2.Suite,
+    TConformance_ISequence_Op_Select_3.Suite,
+    TConformance_ISequence_Op_Select_4.Suite,
+    TConformance_ISequence_Op_Select_5.Suite
   ]);
 
   RegisterTests('Conformance.Associative.Specific', [
-    TConformance_IEnexAssociativeCollection_ToDictionary.Suite,
-    TConformance_IEnexAssociativeCollection_SelectKeys.Suite,
-    TConformance_IEnexAssociativeCollection_SelectValues.Suite,
-    TConformance_IEnexAssociativeCollection_DistinctByKeys.Suite,
-    TConformance_IEnexAssociativeCollection_DistinctByValues.Suite,
-    TConformance_IEnexAssociativeCollection_Where.Suite
+    TConformance_IAssociation_ToDictionary.Suite,
+    TConformance_IAssociation_SelectKeys.Suite,
+    TConformance_IAssociation_SelectValues.Suite,
+    TConformance_IAssociation_DistinctByKeys.Suite,
+    TConformance_IAssociation_DistinctByValues.Suite,
+    TConformance_IAssociation_Where.Suite
   ]);
 
 end.

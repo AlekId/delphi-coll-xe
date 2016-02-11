@@ -35,45 +35,216 @@ uses SysUtils,
      Collections.BidiMaps;
 
 type
+  // TODO: Implement this test class
   TConformance_TBidiMap = class(TConformance_IBidiMap)
+  protected
+    procedure SetUp_IBidiMap(out AEmpty, AOne, AFull: IBidiMap<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
+  // TODO: Implement this test class
   TConformance_TSortedBidiMap = class(TConformance_IBidiMap)
+  protected
+    procedure SetUp_IBidiMap(out AEmpty, AOne, AFull: IBidiMap<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
+  // TODO: Implement this test class
   TConformance_TDoubleSortedBidiMap = class(TConformance_IBidiMap)
+  protected
+    procedure SetUp_IBidiMap(out AEmpty, AOne, AFull: IBidiMap<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
 type
-  TConformance_TBidiMap_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TBidiMap_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TBidiMap_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TBidiMap_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TSortedBidiMap_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TSortedBidiMap_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TSortedBidiMap_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TSortedBidiMap_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TDoubleSortedBidiMap_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TDoubleSortedBidiMap_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TDoubleSortedBidiMap_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TDoubleSortedBidiMap_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
 
 implementation
+
+{ TConformance_TBidiMap }
+
+procedure TConformance_TBidiMap.SetUp_IBidiMap(out AEmpty, AOne,
+  AFull: IBidiMap<NativeInt, NativeInt>; out APairs: TPairs;
+  out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set maps up correctly
+  AEmpty := TBidiMap<NativeInt,NativeInt>.Create;
+  AOne := TBidiMap<NativeInt,NativeInt>.Create;
+  AFull := TBidiMap<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oNone;
+end;
+
+{ TConformance_TSortedBidiMap }
+
+procedure TConformance_TSortedBidiMap.SetUp_IBidiMap(out AEmpty, AOne,
+  AFull: IBidiMap<NativeInt, NativeInt>; out APairs: TPairs;
+  out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set maps up correctly
+  AEmpty := TSortedBidiMap<NativeInt,NativeInt>.Create;
+  AOne := TSortedBidiMap<NativeInt,NativeInt>.Create;
+  AFull := TSortedBidiMap<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oAscending;
+end;
+
+{ TConformance_TDoubleSortedBidiMap }
+
+procedure TConformance_TDoubleSortedBidiMap.SetUp_IBidiMap(out AEmpty, AOne,
+  AFull: IBidiMap<NativeInt, NativeInt>; out APairs: TPairs;
+  out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set maps up correctly
+  AEmpty := TDoubleSortedBidiMap<NativeInt,NativeInt>.Create;
+  AOne := TDoubleSortedBidiMap<NativeInt,NativeInt>.Create;
+  AFull := TDoubleSortedBidiMap<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oAscending;
+end;
+
+{ TConformance_TBidiMap_Keys }
+
+procedure TConformance_TBidiMap_Keys.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LMap: IBidiMap<NativeInt,NativeInt>;
+begin
+  // TODO: Set maps up correctly
+  LMap := TBidiMap<NativeInt,NativeInt>.Create;
+  AEmpty := LMap.Keys;
+  AOne := LMap.Keys;
+  AFull := LMap.Keys;
+  SetLength(AElements, 0);
+  AOrdering := oNone;
+end;
+
+{ TConformance_TBidiMap_Values }
+
+procedure TConformance_TBidiMap_Values.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LMap: IBidiMap<NativeInt,NativeInt>;
+begin
+  // TODO: Set maps up correctly
+  LMap := TBidiMap<NativeInt,NativeInt>.Create;
+  AEmpty := LMap.Values;
+  AOne := LMap.Values;
+  AFull := LMap.Values;
+  SetLength(AElements, 0);
+  AOrdering := oNone;
+end;
+
+{ TConformance_TSortedBidiMap_Keys }
+
+procedure TConformance_TSortedBidiMap_Keys.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LMap: IBidiMap<NativeInt,NativeInt>;
+begin
+  // TODO: Set maps up correctly
+  LMap := TSortedBidiMap<NativeInt,NativeInt>.Create;
+  AEmpty := LMap.Keys;
+  AOne := LMap.Keys;
+  AFull := LMap.Keys;
+  SetLength(AElements, 0);
+  AOrdering := oAscending;
+end;
+
+{ TConformance_TSortedBidiMap_Values }
+
+procedure TConformance_TSortedBidiMap_Values.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LMap: IBidiMap<NativeInt,NativeInt>;
+begin
+  // TODO: Set maps up correctly
+  LMap := TSortedBidiMap<NativeInt,NativeInt>.Create;
+  AEmpty := LMap.Values;
+  AOne := LMap.Values;
+  AFull := LMap.Values;
+  SetLength(AElements, 0);
+  AOrdering := oAscending;
+end;
+
+{ TConformance_TDoubleSortedBidiMap_Keys }
+
+procedure TConformance_TDoubleSortedBidiMap_Keys.SetUp_ISequence(out AEmpty,
+  AOne, AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LMap: IBidiMap<NativeInt,NativeInt>;
+begin
+  // TODO: Set maps up correctly
+  LMap := TDoubleSortedBidiMap<NativeInt,NativeInt>.Create;
+  AEmpty := LMap.Keys;
+  AOne := LMap.Keys;
+  AFull := LMap.Keys;
+  SetLength(AElements, 0);
+  AOrdering := oAscending;
+end;
+
+{ TConformance_TDoubleSortedBidiMap_Values }
+
+procedure TConformance_TDoubleSortedBidiMap_Values.SetUp_ISequence(out AEmpty,
+  AOne, AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LMap: IBidiMap<NativeInt,NativeInt>;
+begin
+  // TODO: Set maps up correctly
+  LMap := TDoubleSortedBidiMap<NativeInt,NativeInt>.Create;
+  AEmpty := LMap.Values;
+  AOne := LMap.Values;
+  AFull := LMap.Values;
+  SetLength(AElements, 0);
+  AOrdering := oAscending;
+end;
 
 initialization
   RegisterTests('Conformance.Associative.BidiMaps', [

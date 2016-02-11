@@ -1,4 +1,4 @@
-(*
+ (*
 * Copyright (c) 2011, Ciobanu Alexandru
 * All rights reserved.
 *
@@ -35,44 +35,209 @@ uses SysUtils,
      Collections.Dictionaries;
 
 type
+  // TODO: Implement this test class
   TConformance_TDictionary = class(TConformance_IDictionary)
+  protected
+    procedure SetUp_IDictionary(out AEmpty, AOne, AFull: IDictionary<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
+  // TODO: Implement this test class
   TConformance_TLinkedDictionary = class(TConformance_IDictionary)
+  protected
+    procedure SetUp_IDictionary(out AEmpty, AOne, AFull: IDictionary<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
+  // TODO: Implement this test class
   TConformance_TSortedDictionary = class(TConformance_IDictionary)
+  protected
+    procedure SetUp_IDictionary(out AEmpty, AOne, AFull: IDictionary<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
 type
-  TConformance_TDictionary_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TDictionary_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TDictionary_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TDictionary_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TLinkedDictionary_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TLinkedDictionary_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TLinkedDictionary_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TLinkedDictionary_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TSortedDictionary_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TSortedDictionary_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TSortedDictionary_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TSortedDictionary_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
 implementation
+
+{ TConformance_TDictionary }
+
+procedure TConformance_TDictionary.SetUp_IDictionary(out AEmpty, AOne,
+  AFull: IDictionary<NativeInt, NativeInt>; out APairs: TPairs;
+  out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set dictionaries up correctly
+  AEmpty := TDictionary<NativeInt,NativeInt>.Create;
+  AOne := TDictionary<NativeInt,NativeInt>.Create;
+  AFull := TDictionary<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oNone;
+end;
+
+{ TConformance_TLinkedDictionary }
+
+procedure TConformance_TLinkedDictionary.SetUp_IDictionary(out AEmpty, AOne,
+  AFull: IDictionary<NativeInt, NativeInt>; out APairs: TPairs;
+  out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set dictionaries up correctly
+  AEmpty := TLinkedDictionary<NativeInt,NativeInt>.Create;
+  AOne := TLinkedDictionary<NativeInt,NativeInt>.Create;
+  AFull := TLinkedDictionary<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oNone;
+end;
+
+{ TConformance_TSortedDictionary }
+
+procedure TConformance_TSortedDictionary.SetUp_IDictionary(out AEmpty, AOne,
+  AFull: IDictionary<NativeInt, NativeInt>; out APairs: TPairs;
+  out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set dictionaries up correctly
+  AEmpty := TSortedDictionary<NativeInt,NativeInt>.Create;
+  AOne := TSortedDictionary<NativeInt,NativeInt>.Create;
+  AFull := TSortedDictionary<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oAscending;
+end;
+
+{ TConformance_TDictionary_Keys }
+
+procedure TConformance_TDictionary_Keys.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Keys;
+  AOne := LDict.Keys;
+  AFull := LDict.Keys;
+  SetLength(AElements, 0);
+end;
+
+{ TConformance_TDictionary_Values }
+
+procedure TConformance_TDictionary_Values.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Values;
+  AOne := LDict.Values;
+  AFull := LDict.Values;
+  SetLength(AElements, 0);
+end;
+
+{ TConformance_TLinkedDictionary_Keys }
+
+procedure TConformance_TLinkedDictionary_Keys.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TLinkedDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Keys;
+  AOne := LDict.Keys;
+  AFull := LDict.Keys;
+  SetLength(AElements, 0);
+end;
+
+{ TConformance_TLinkedDictionary_Values }
+
+procedure TConformance_TLinkedDictionary_Values.SetUp_ISequence(out AEmpty,
+  AOne, AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TLinkedDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Values;
+  AOne := LDict.Values;
+  AFull := LDict.Values;
+  SetLength(AElements, 0);
+end;
+
+{ TConformance_TSortedDictionary_Keys }
+
+procedure TConformance_TSortedDictionary_Keys.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TSortedDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Keys;
+  AOne := LDict.Keys;
+  AFull := LDict.Keys;
+  SetLength(AElements, 0);
+end;
+
+{ TConformance_TSortedDictionary_Values }
+
+procedure TConformance_TSortedDictionary_Values.SetUp_ISequence(out AEmpty,
+  AOne, AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TSortedDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Values;
+  AOne := LDict.Values;
+  AFull := LDict.Values;
+  SetLength(AElements, 0);
+end;
 
 initialization
   RegisterTests('Conformance.Associative.Dictionaries', [

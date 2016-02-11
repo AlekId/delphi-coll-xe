@@ -32,47 +32,218 @@ uses SysUtils,
      TestFramework,
      Generics.Collections,
      Collections.Base,
-     Collections.Dictionaries;
+     Collections.BidiDictionaries;
 
 type
+  // TODO: Implement this test class
   TConformance_TBidiDictionary = class(TConformance_IBidiDictionary)
+  protected
+    procedure SetUp_IBidiDictionary(out AEmpty, AOne, AFull: IBidiDictionary<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
+  // TODO: Implement this test class
   TConformance_TSortedBidiDictionary = class(TConformance_IBidiDictionary)
+  protected
+    procedure SetUp_IBidiDictionary(out AEmpty, AOne, AFull: IBidiDictionary<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
+  // TODO: Implement this test class
   TConformance_TDoubleSortedBidiDictionary = class(TConformance_IBidiDictionary)
+  protected
+    procedure SetUp_IBidiDictionary(out AEmpty, AOne, AFull: IBidiDictionary<NativeInt, NativeInt>; out APairs: TPairs; out AKeyOrdering: TOrdering); override;
   published
   end;
 
 type
-  TConformance_TBidiDictionary_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TBidiDictionary_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TBidiDictionary_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TBidiDictionary_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TSortedBidiDictionary_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TSortedBidiDictionary_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TSortedBidiDictionary_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TSortedBidiDictionary_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TDoubleSortedBidiDictionary_Keys = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TDoubleSortedBidiDictionary_Keys = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
-  TConformance_TDoubleSortedBidiDictionary_Values = class(TConformance_IEnexCollection)
+  // TODO: Implement this test class
+  TConformance_TDoubleSortedBidiDictionary_Values = class(TConformance_ISequence)
+  protected
+    procedure SetUp_ISequence(out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements; out AOrdering: TOrdering); override;
   published
   end;
 
 implementation
+
+{ TConformance_TBidiDictionary }
+
+procedure TConformance_TBidiDictionary.SetUp_IBidiDictionary(out AEmpty, AOne,
+  AFull: IBidiDictionary<NativeInt, NativeInt>; out APairs: TPairs;
+  out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set dictionaries up correctly
+  AEmpty := TBidiDictionary<NativeInt,NativeInt>.Create;
+  AOne := TBiDiDictionary<NativeInt,NativeInt>.Create;
+  AFull := TBiDiDictionary<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oNone;
+end;
+
+{ TConformance_TSortedBidiDictionary }
+
+procedure TConformance_TSortedBidiDictionary.SetUp_IBidiDictionary(out AEmpty,
+  AOne, AFull: IBidiDictionary<NativeInt, NativeInt>; out APairs: TPairs;
+  out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set dictionaries up correctly
+  AEmpty := TSortedBidiDictionary<NativeInt,NativeInt>.Create;
+  AOne := TSortedBiDiDictionary<NativeInt,NativeInt>.Create;
+  AFull := TSortedBiDiDictionary<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oAscending;
+end;
+
+{ TConformance_TDoubleSortedBidiDictionary }
+
+procedure TConformance_TDoubleSortedBidiDictionary.SetUp_IBidiDictionary(
+  out AEmpty, AOne, AFull: IBidiDictionary<NativeInt, NativeInt>;
+  out APairs: TPairs; out AKeyOrdering: TOrdering);
+begin
+  // TODO: Set dictionaries up correctly
+  AEmpty := TDoubleSortedBidiDictionary<NativeInt,NativeInt>.Create;
+  AOne := TDoubleSortedBidiDictionary<NativeInt,NativeInt>.Create;
+  AFull := TDoubleSortedBidiDictionary<NativeInt,NativeInt>.Create;
+  SetLength(APairs, 0);
+  AKeyOrdering := oAscending;
+end;
+
+{ TConformance_TBidiDictionary_Keys }
+
+procedure TConformance_TBidiDictionary_Keys.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IBidiDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TBidiDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Keys;
+  AOne := LDict.Keys;
+  AFull := LDict.Keys;
+  SetLength(AElements, 0);
+  AOrdering := oNone;
+end;
+
+{ TConformance_TBidiDictionary_Values }
+
+procedure TConformance_TBidiDictionary_Values.SetUp_ISequence(out AEmpty, AOne,
+  AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IBidiDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TBidiDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Values;
+  AOne := LDict.Values;
+  AFull := LDict.Values;
+  SetLength(AElements, 0);
+  AOrdering := oNone;
+end;
+
+{ TConformance_TSortedBidiDictionary_Keys }
+
+procedure TConformance_TSortedBidiDictionary_Keys.SetUp_ISequence(out AEmpty,
+  AOne, AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IBidiDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TSortedBidiDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Keys;
+  AOne := LDict.Keys;
+  AFull := LDict.Keys;
+  SetLength(AElements, 0);
+  AOrdering := oAscending;
+end;
+
+{ TConformance_TSortedBidiDictionary_Values }
+
+procedure TConformance_TSortedBidiDictionary_Values.SetUp_ISequence(out AEmpty,
+  AOne, AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IBidiDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TSortedBidiDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Values;
+  AOne := LDict.Values;
+  AFull := LDict.Values;
+  SetLength(AElements, 0);
+  AOrdering := oAscending;
+end;
+
+{ TConformance_TDoubleSortedBidiDictionary_Keys }
+
+procedure TConformance_TDoubleSortedBidiDictionary_Keys.SetUp_ISequence(
+  out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IBidiDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TDoubleSortedBidiDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Keys;
+  AOne := LDict.Keys;
+  AFull := LDict.Keys;
+  SetLength(AElements, 0);
+  AOrdering := oAscending;
+end;
+
+{ TConformance_TDoubleSortedBidiDictionary_Values }
+
+procedure TConformance_TDoubleSortedBidiDictionary_Values.SetUp_ISequence(
+  out AEmpty, AOne, AFull: ISequence<NativeInt>; out AElements: TElements;
+  out AOrdering: TOrdering);
+var
+  LDict: IBidiDictionary<NativeInt,NativeInt>;
+begin
+  // TODO: Set dictionaries up correctly
+  LDict := TDoubleSortedBidiDictionary<NativeInt,NativeInt>.Create;
+  AEmpty := LDict.Values;
+  AOne := LDict.Values;
+  AFull := LDict.Values;
+  SetLength(AElements, 0);
+  AOrdering := oAscending;
+end;
 
 initialization
   RegisterTests('Conformance.Associative.BidiDictionaries', [
