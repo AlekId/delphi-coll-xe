@@ -2,7 +2,7 @@
 
 ##  Major Release: 1.2
 
-* New unit Collections.Serialization. Includes:
+* New unit `Collections.Serialization`. Includes:
     1. `TSerializer` - a semi-abstract class that implementes generic serialization.
     2. `TDeserializer` - a semi-abstract class that implements generic deserialization.
     3. `ISerializable` - an interface can be implemented by classes that need to override the default serialization.
@@ -10,27 +10,25 @@
     5. `[NonSerializable]` - the attribute to marks field that should not be serialized.
     6. Two concrete implementations for serialization in implementation section!
 * Some documentation fixes all over the place.
-* Removed the `ICollectionMap<TKey, TValue>`. It made no sense in the hierarchy. Its methods were split between the two interfaces that inherited it.
+* Removed the `ICollectionMap<TKey, TValue>` interface. It made no sense in the hierarchy. Its methods were split between the two interfaces that inherited it.
 * Added a new interface `ILinkedList<T>` currently implemented by `TLinkedList<T>` and `TSortedLinkedList<T>`.
-* Removed `Copy()` methods from `TList<T>`.
+* Removed `Copy` methods from `TList<T>`.
 * Removed sorting, reversing and copy methods from `TLinkedList<T>`. That was a mistake anyway.
 * Added `TAbstractSet<T>` from which all sets derive.
 * Added `TAbstractStack<T>` from which all stacks derive.
 * Added `TAbstractQueue<T>` from which all queues derive.
 * Added `TAbstractDictionary<T>` from which all dictionaries derive. This allowed us to remove a lot of duplicated code.
-* Added `TAbstractList<T>` which which `TList<T>` derives.
-* Added `TAbstractLinkedList<T>` derived from `TAbstractList<T>` which which `TLinkedList<T>` derives.
+* Added `TAbstractList<T>` from which `TList<T>` derives.
+* Added `TAbstractLinkedList<T>` derived from `TAbstractList<T>` from which `TLinkedList<T>` derives.
 * `TSortedList<T>` extends `TList<T>` now while `TSortedLinkedList<T>` extends `TLinkedList<T>`. Removed a lot of duplicated code.
+* Removed `ISortedList<T>`. There's nothing I can put in there to make it useful.
 * `TLinkedList<T>` and `TSortedLinkedList<T>` implement `IQueue<T>` and `IStack<T>`. A linked list can be used as both these collections transparently.
 * `TCollection<T>` base class supports versioning out of the box.
-* `TEnumerator<T>` base class was completely revamped. It is not much more simple to extend and also provides version checking out of the box.
+* `TEnumerator<T>` base class was renamed to `TAbstractEnumerator<T>` and completely revamped. It is now much more simple to extend and also provides version checking out of the box.
 * `TForwardingEnumerator<T>` is a special class that uses another enumerator as base.
-* Renamed `IEnexGroupingCollection<TKey, T>` into simply `IGrouping<TKey, T>`.
-* Rewritten all enumerators in the package to use the new interface.
-* Introduced a new non-generic `TCollection`. `TCollection<T>` derives from it.
-* Removed `ISortedList<T>`. There's nothing I can put in there to make it useful.
-* `TCollection` renamed to `TAbstractCollection` and `TCollection<T>` renamed to `TAbstractCollection<T>`.
-* `TEnumerator<T>` renamed to `TAbstractEnumerator<T>`.
+* Renamed `IEnexGroupingCollection<TKey, T>` as `IGrouping<TKey, T>`.
+* Rewrote all enumerators in the package to use the new interface.
+* Introduced a new non-generic `TAbstractCollection`. `TAbstractCollection<T>` derives from it.
 * Added `IOperableCollection<T>` that exposes `Add`, `AddAll`, `Remove`, `RemoveAll`, `Contains`, `ContainsAll` and `Clear` methods.
 * Added `TOperableCollection<T>` with default implementation of `IOperableCollection<T>`. All simple types adjusted accordingly.
 * `IList<T>.Insert(Collection)` renamed to `InsertAll`. `Add(Collection)` renamed to `AddAll`.
@@ -90,7 +88,7 @@
 * Do not expose `AreEqual`, `Compare` and `GetHashCode` in `TRules<T>`.
 * Add protected methods `ElementsAreEqual`, `CompareElements`, `GetElementHashCode` to `TEnexCollection<T>`.
 * Add protected methods `KeysAreEqual`, `CompareKeys`, `GetKeyHashCode` to `TEnexAssociativeCollection<TKey, TValue>`.
-* Add protected methods `ValuessAreEqual`, `CompareValues`, `GetValueHashCode` to `TEnexAssociativeCollection<TKey, TValue>`.
+* Add protected methods `ValuesAreEqual`, `CompareValues`, `GetValueHashCode` to `TEnexAssociativeCollection<TKey, TValue>`.
 * Do not use `ElementRules`, `KeyRules` and `ValueRules` in code directly.
 * Define `EArgumentNilException` if RTL version is less than 22 (2010).
 * Fixed grammar and spelling errors (by Denisa Ilascu).
