@@ -32,7 +32,7 @@ There following is a guesstimate of the changes made to the project from v1.2 un
     * Removed outdated help file and its source documents.
 * Fixed problem with project options that was causing AV fault in Delphi XE IDE. 
 * Removed modeling files.
-* Fixed Samples project to work around an apparent Delphi XE compiler bug.
+* Fixed *Samples* project to work around an apparent Delphi XE compiler bug.
 * New batch file to delete temporary files from source tree.
 * Build number in library version information no longer auto-increments on each build.
 
