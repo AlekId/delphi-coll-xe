@@ -2,21 +2,39 @@
 
 ## Unreleased
 
-* All apparent changes before project was forked. (There may be more!):
-    * Various renamings:
-        * `TEnexAssociativeCollection<TKey,TValue>` as `TAssociation<TKey,TValue>`;
-        * `IEnexAssociativeCollection<TKey,TValue>` as `IAssociation<TKey,TValue>`;
-        * `TEnexCollection<T>` as `TSequence<T>`;
-        * `IEnexCollection<T>` as `ISequence<T>`;
-        * `TCollection<T>` as `TContainer<T>`;
-        * `ICollection<T>` as  `IContainer<T>`; 
-        * `TAbstractCollection` as `TAbstractContainer`;
-        * `TAbstractCollection<T>` as  `TAbstractContainer<T>`; 
-        * `TOperableCollection<T>` as `TCollection<T>`;
-        * `IOperableCollection<T>` as `ICollection<T>`;
-        * `[NonSerializable]` attribute as `[NonSerialized]`.
-    * Removed `GroupedBy<T>()` extended operation added in v1.1.    
- 
+### Changes before project fork
+
+There following is a guesstimate of the changes made to the project from v1.2 until the the project was forked. This list is not guaranteed to be complete or totally accurate!
+
+* Various renamings:
+    * `TEnexAssociativeCollection<TKey,TValue>` as `TAssociation<TKey,TValue>`;
+    * `IEnexAssociativeCollection<TKey,TValue>` as `IAssociation<TKey,TValue>`;
+    * `TEnexCollection<T>` as `TSequence<T>`;
+    * `IEnexCollection<T>` as `ISequence<T>`;
+    * `TCollection<T>` as `TContainer<T>`;
+    * `ICollection<T>` as  `IContainer<T>`; 
+    * `TAbstractCollection` as `TAbstractContainer`;
+    * `TAbstractCollection<T>` as  `TAbstractContainer<T>`; 
+    * `TOperableCollection<T>` as `TCollection<T>`;
+    * `IOperableCollection<T>` as `ICollection<T>`;
+    * `[NonSerializable]` attribute as `[NonSerialized]`.
+* Removed `GroupedBy<T>()` extended operation added in v1.1.
+
+### Changes since project fork
+
+* Fixed unit tests to enable compilation and to prevent test running from crashing when running some tests. Many of the changes were required because of the interface and class name changes noted above. **Note:** No attempt was made to make any failed tests pass or to complete missing tests -- the changes were simple to get the test runner compiled and running.
+* Documentation changes:
+    * Added documentation recovered from former project wiki on *GoogleCode*.
+    * Rewrote read-me.
+    * Added credits file listing contributors.
+    * Revised license information in light of project fork.
+    * Formatted change log in markdown.
+    * Removed outdated help file and its source documents.
+* Fixed problem with project options that was causing AV fault in Delphi XE IDE. 
+* Removed modeling files.
+* Fixed Samples project to work around an apparent Delphi XE compiler bug.
+* New batch file to delete temporary files from source tree.
+* Build number in library version information no longer auto-increments on each build.
 
 --------
 
