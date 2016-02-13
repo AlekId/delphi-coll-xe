@@ -23,13 +23,13 @@ To alleviate this need, the `Collections` package introduces `TRules<T>`, which 
 
 `Generics.Collections` classes are all derived from `TEnumerable<T>` or `TEnumerator<T>`. Most people will agree that this is not enough in many cases and that is why `Collections` introduces interfaces. All collections have a public interface (e.g. `IList<T>`, `IDictionary<TKey, TValue>`, and so on). Also, since there exists more than one implementation for the same collection idea, an interface is a must. For example, there is a hash-based `TDictionary<TKey, TValue>` type and an AVL tree based-one, `TSortedDictionary<TKey, TValue>`.
 
-All collections in this package descend from `TCollection<T>` but there is no restriction that new collections must derive from it also. It is still recommended, because the base classes implement most extended enumerable operations out-of-the-box.
+All collections in this package ultimately descend from either `TSequence<T>` (non-associative collections) or `TAssociation<T>` (associative collections), both of which descend from `TAbstractContainer<T>`. There is no restriction that new collections must do the same, though it is still recommended, because the base classes implement most extended enumerable operations out-of-the-box.
 
 ## Enumerable extensions (ENEX)
 
 All collections in the proposed package support a set of extensions. Because Delphi does not support proper class helpers, it was necessary to provide interface-based extensions. In any case, there are a large number of helper functions each collection implements / re-implements or extends, giving the user total freedom and optimizing a lot of things that would take a lot of time otherwise. For example, to obtain a list of distinct elements in a list, one can simple call `LList.Distinct().ToList()`, which otherwise would have taken a bit of coding to write.
 
-For more information regarding ENEX, see `IEnexCollection<T>` and `IEnexAssociativeCollection<TKey, TValue>` in the `Collections.Base` unit.
+For more information regarding ENEX, see `ISequence<T>` and `IAssociation<TKey, TValue>` in the `Collections.Base` unit.
 
 ## Integer vs NativeInt
 
